@@ -1,4 +1,9 @@
-﻿using Mecalux.TestProcessor.CrossCutting.Utils.Constants;
+﻿using Mecalux.TestProcessor.Business.Logic.Abstractions;
+using Mecalux.TestProcessor.Business.Logic.Abstractions.TextSort;
+using Mecalux.TestProcessor.Business.Logic.TextSort;
+using Mecalux.TestProcessor.CrossCutting.Enums;
+using Mecalux.TestProcessor.CrossCutting.Globalization;
+using Mecalux.TestProcessor.CrossCutting.Utils.Constants;
 using Mecalux.TestProcessor.ResourceAccess.Mappers.Abstractions;
 using Mecalux.TestProcessor.ResourceAccess.Repositories.Abstractions;
 
@@ -27,7 +32,7 @@ namespace Mecalux.TestProcessor.Business.Logic
 
         public ResourceAccess.Contracts.Statistics GetStatistics(string textContent)
         {
-            var words = textContent.Split(new[] { TextConstants.Space, TextConstants.CarriageReturn, TextConstants.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            var words = SplitText(textContent);
 
             var hyphenCount = textContent.Count(c => c == TextConstants.Hyphen);
             var wordCount = words.Count(word => word.Any(char.IsLetter));
@@ -39,6 +44,33 @@ namespace Mecalux.TestProcessor.Business.Logic
                 Words = wordCount,
                 Spaces = spaceCount
             };
+        }
+
+        public string Sort(string textContent, SortOption orderOption)
+        {
+            var words = SplitText(textContent);
+            ITextSortingStrategy textSortingStrategy;
+            switch (orderOption)
+            {
+                case SortOption.AlphabeticAsc:
+                    textSortingStrategy = new AlphabeticAscendingSort();
+                    break;
+                case SortOption.AlphabeticDesc:
+                    textSortingStrategy = new AlphabeticDescendingSort();
+                    break;
+                case SortOption.LengthAsc:
+                    textSortingStrategy = new LengthAscendingSort();
+                    break;
+                default:
+                    throw new ArgumentException(Messages.InvalidOrderOption);
+            }
+
+            return textSortingStrategy.SortedContent(words);
+        }
+
+        private IEnumerable<string> SplitText(string textContent)
+        {
+            return textContent.Split(new[] { TextConstants.Space, TextConstants.CarriageReturn, TextConstants.NewLine }, StringSplitOptions.RemoveEmptyEntries);
         }
     }
 }

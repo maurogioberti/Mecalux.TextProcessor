@@ -4,6 +4,6 @@
     {
         AlphabeticAsc,
         AlphabeticDesc,
-        LenghtAsc
+        LengthAsc
     }
 }

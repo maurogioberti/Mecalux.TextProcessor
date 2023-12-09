@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mecalux.TestProcessor.Business.Logic.Abstractions\Mecalux.TestProcessor.Business.Logic.Abstractions.csproj" />
     <ProjectReference Include="..\Mecalux.TestProcessor.Business.Logic\Mecalux.TestProcessor.Business.Logic.csproj" />
     <ProjectReference Include="..\Mecalux.TestProcessor.CrossCutting.Enums\Mecalux.TestProcessor.CrossCutting.Enums.csproj" />
     <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Contracts\Mecalux.TestProcessor.ResourceAccess.Contracts.csproj" />

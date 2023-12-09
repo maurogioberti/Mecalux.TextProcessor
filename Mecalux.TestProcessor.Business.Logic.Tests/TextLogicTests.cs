@@ -1,4 +1,5 @@
 ﻿using AutoFixture;
+using Mecalux.TestProcessor.CrossCutting.Enums;
 using Mecalux.TestProcessor.ResourceAccess.Mappers;
 using Mecalux.TestProcessor.ResourceAccess.Mappers.Abstractions;
 using Mecalux.TestProcessor.ResourceAccess.Repositories.Abstractions;
@@ -49,7 +50,7 @@ namespace Mecalux.TestProcessor.Business.Logic.Tests
         [TestCase("Hello-world! This is a test.", 1, 5, 4)]
         [TestCase("No-hyphens here but spaces", 1, 4, 3)]
         [TestCase("Testing, one, two, three.", 0, 4, 3)]
-        [TestCase("No-Spaces", 1, 1, 0)] 
+        [TestCase("No-Spaces", 1, 1, 0)]
         public void GetStatistics_When_Valid_Inputs_Should_Return_Expected_Results(string text, int expectedHyphens, int expectedWords, int expectedSpaces)
         {
             // Arrange
@@ -83,5 +84,34 @@ namespace Mecalux.TestProcessor.Business.Logic.Tests
             Assert.That(result.Words, Is.EqualTo(expectedWords), "The word count is incorrect.");
             Assert.That(result.Spaces, Is.EqualTo(expectedSpaces), "The space count is incorrect.");
         }
+
+        [Test]
+        public void Sort_When_Sort_Option_Does_Not_Exists_Should_Throw_ArgumentException()
+        {
+            // Arrange
+            var builder = new TextLogicBuilder();
+            var textContent = fixture.Create<string>();
+
+            // Act
+            // Assert
+            Assert.Throws<ArgumentException>(() => builder.Build().Sort(textContent, (SortOption)999));
+        }
+
+        [TestCase("Hello world apple", SortOption.AlphabeticAsc, "apple Hello world")]
+        [TestCase("Hello world apple", SortOption.AlphabeticDesc, "world Hello apple")]
+        [TestCase("Hello world apple", SortOption.LengthAsc, "apple Hello world")]
+        [TestCase("Hello wor ap", SortOption.LengthAsc, "ap wor Hello")]
+        public void Sort_When_Valid_Input_Should_Sort_With_Given_Option(string textContent, SortOption orderOption, string expectedResult)
+        {
+            // Arrange
+            var builder = new TextLogicBuilder();
+
+            // Act
+            var result = builder.Build().Sort(textContent, orderOption);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
     }
 }
