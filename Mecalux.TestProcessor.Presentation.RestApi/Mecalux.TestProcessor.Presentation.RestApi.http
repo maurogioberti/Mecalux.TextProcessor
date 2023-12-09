@@ -1,0 +1,6 @@
+@Mecalux.TestProcessor.Presentation.RestApi_HostAddress = http://localhost:5162
+
+GET {{Mecalux.TestProcessor.Presentation.RestApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
