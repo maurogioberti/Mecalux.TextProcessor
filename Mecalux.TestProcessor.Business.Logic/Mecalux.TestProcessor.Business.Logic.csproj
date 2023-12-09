@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mecalux.TestProcessor.CrossCutting.Utils\Mecalux.TestProcessor.CrossCutting.Utils.csproj" />
     <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Contracts\Mecalux.TestProcessor.ResourceAccess.Contracts.csproj" />
     <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Domains\Mecalux.TestProcessor.ResourceAccess.Domains.csproj" />
     <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Mappers.Abstractions\Mecalux.TestProcessor.ResourceAccess.Mappers.Abstractions.csproj" />

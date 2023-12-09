@@ -4,10 +4,26 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoFixture.AutoMoq" Version="4.18.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageReference Include="Moq" Version="4.20.70" />
     <PackageReference Include="NUnit" Version="4.0.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mecalux.TestProcessor.Business.Logic.Abstractions\Mecalux.TestProcessor.Business.Logic.Abstractions.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.Business.Logic\Mecalux.TestProcessor.Business.Logic.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.CrossCutting.Enums\Mecalux.TestProcessor.CrossCutting.Enums.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Contracts\Mecalux.TestProcessor.ResourceAccess.Contracts.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Domains\Mecalux.TestProcessor.ResourceAccess.Domains.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Mappers.Abstractions\Mecalux.TestProcessor.ResourceAccess.Mappers.Abstractions.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Mappers\Mecalux.TestProcessor.ResourceAccess.Mappers.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Repositories.Abstractions\Mecalux.TestProcessor.ResourceAccess.Repositories.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,9 +1,10 @@
-﻿using Mecalux.TestProcessor.ResourceAccess.Mappers.Abstractions;
+﻿using Mecalux.TestProcessor.CrossCutting.Utils.Constants;
+using Mecalux.TestProcessor.ResourceAccess.Mappers.Abstractions;
 using Mecalux.TestProcessor.ResourceAccess.Repositories.Abstractions;
 
 namespace Mecalux.TestProcessor.Business.Logic
 {
-    public class TextLogic
+    public class TextLogic : ITextLogic
     {
         public ITextRepository TextRepository { get; }
         public ITextMapper TextMapper { get; }
@@ -24,10 +25,12 @@ namespace Mecalux.TestProcessor.Business.Logic
             return TextMapper.Map(textDomain);
         }
 
-        public ResourceAccess.Contracts.Statistics GetStatics(string textContent)
+        public ResourceAccess.Contracts.Statistics GetStatistics(string textContent)
         {
-            var hyphenCount = textContent.Count(c => c == '-');
-            var wordCount = textContent.Split(new[] { ' ', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            var words = textContent.Split(new[] { TextConstants.Space, TextConstants.CarriageReturn, TextConstants.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+
+            var hyphenCount = textContent.Count(c => c == TextConstants.Hyphen);
+            var wordCount = words.Count(word => word.Any(char.IsLetter));
             var spaceCount = textContent.Count(char.IsWhiteSpace);
 
             return new ResourceAccess.Contracts.Statistics
