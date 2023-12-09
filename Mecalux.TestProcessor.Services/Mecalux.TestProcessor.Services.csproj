@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Mecalux.TestProcessor.Business.Logic.Abstractions\Mecalux.TestProcessor.Business.Logic.Abstractions.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.Services.Abstractions\Mecalux.TestProcessor.Services.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>
