@@ -8,7 +8,7 @@ namespace Mecalux.TestProcessor.ResourceAccess.Mappers
         private Contracts.Sort Map(Domains.TextSort textSort) => new Contracts.Sort
         {
             Id = textSort.Id,
-            Option = textSort.Option
+            Option = textSort.Option.ToString()
         };
 
         public SortCollection MapCollection(IEnumerable<Domains.TextSort> items)

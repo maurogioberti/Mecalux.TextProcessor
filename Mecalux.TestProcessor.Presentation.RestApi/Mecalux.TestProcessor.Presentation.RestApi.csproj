@@ -8,7 +8,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mecalux.TestProcessor.Business.Logic.Abstractions\Mecalux.TestProcessor.Business.Logic.Abstractions.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.Business.Logic\Mecalux.TestProcessor.Business.Logic.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.CrossCutting.Globalization\Mecalux.TestProcessor.CrossCutting.Globalization.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.CrossCutting.Utils\Mecalux.TestProcessor.CrossCutting.Utils.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Contracts\Mecalux.TestProcessor.ResourceAccess.Contracts.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Mappers.Abstractions\Mecalux.TestProcessor.ResourceAccess.Mappers.Abstractions.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Mappers\Mecalux.TestProcessor.ResourceAccess.Mappers.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Repositories.Abstractions\Mecalux.TestProcessor.ResourceAccess.Repositories.Abstractions.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Repositories\Mecalux.TestProcessor.ResourceAccess.Repositories.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.Services.Abstractions\Mecalux.TestProcessor.Services.Abstractions.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.Services\Mecalux.TestProcessor.Services.csproj" />
   </ItemGroup>
 
 </Project>
