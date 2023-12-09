@@ -1,15 +1,12 @@
 ﻿using Mecalux.TestProcessor.Business.Logic.Abstractions;
-using Mecalux.TestProcessor.Business.Logic.Abstractions.TextSort;
-using Mecalux.TestProcessor.Business.Logic.TextSort;
-using Mecalux.TestProcessor.CrossCutting.Enums;
-using Mecalux.TestProcessor.CrossCutting.Globalization;
+using Mecalux.TestProcessor.Business.Logic.Base;
 using Mecalux.TestProcessor.CrossCutting.Utils.Constants;
 using Mecalux.TestProcessor.ResourceAccess.Mappers.Abstractions;
 using Mecalux.TestProcessor.ResourceAccess.Repositories.Abstractions;
 
 namespace Mecalux.TestProcessor.Business.Logic
 {
-    public class TextLogic : ITextLogic
+    public class TextLogic : TextLogicBase, ITextLogic
     {
         public ITextRepository TextRepository { get; }
         public ITextMapper TextMapper { get; }
@@ -44,33 +41,6 @@ namespace Mecalux.TestProcessor.Business.Logic
                 Words = wordCount,
                 Spaces = spaceCount
             };
-        }
-
-        public string Sort(string textContent, SortOption orderOption)
-        {
-            var words = SplitText(textContent);
-            ITextSortingStrategy textSortingStrategy;
-            switch (orderOption)
-            {
-                case SortOption.AlphabeticAsc:
-                    textSortingStrategy = new AlphabeticAscendingSort();
-                    break;
-                case SortOption.AlphabeticDesc:
-                    textSortingStrategy = new AlphabeticDescendingSort();
-                    break;
-                case SortOption.LengthAsc:
-                    textSortingStrategy = new LengthAscendingSort();
-                    break;
-                default:
-                    throw new ArgumentException(Messages.InvalidOrderOption);
-            }
-
-            return textSortingStrategy.SortedContent(words);
-        }
-
-        private IEnumerable<string> SplitText(string textContent)
-        {
-            return textContent.Split(new[] { TextConstants.Space, TextConstants.CarriageReturn, TextConstants.NewLine }, StringSplitOptions.RemoveEmptyEntries);
         }
     }
 }

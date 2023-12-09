@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Mecalux.TestProcessor.Business.Logic.Abstractions\Mecalux.TestProcessor.Business.Logic.Abstractions.csproj" />
+    <ProjectReference Include="..\Mecalux.TestProcessor.CrossCutting.Exceptions\Mecalux.TestProcessor.CrossCutting.Exceptions.csproj" />
     <ProjectReference Include="..\Mecalux.TestProcessor.CrossCutting.Globalization\Mecalux.TestProcessor.CrossCutting.Globalization.csproj" />
     <ProjectReference Include="..\Mecalux.TestProcessor.CrossCutting.Utils\Mecalux.TestProcessor.CrossCutting.Utils.csproj" />
     <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Contracts\Mecalux.TestProcessor.ResourceAccess.Contracts.csproj" />
