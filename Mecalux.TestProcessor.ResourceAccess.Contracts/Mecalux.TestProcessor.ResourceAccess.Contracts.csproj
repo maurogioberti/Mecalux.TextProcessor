@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Mecalux.TestProcessor.CrossCutting.Enums\Mecalux.TestProcessor.CrossCutting.Enums.csproj" />
+  </ItemGroup>
+
 </Project>

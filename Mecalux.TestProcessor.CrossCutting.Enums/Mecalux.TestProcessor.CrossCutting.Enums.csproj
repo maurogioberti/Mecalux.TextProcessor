@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Domains\Mecalux.TestProcessor.ResourceAccess.Domains.csproj" />
-  </ItemGroup>
-
 </Project>

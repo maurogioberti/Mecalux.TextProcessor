@@ -1,8 +1,8 @@
 ﻿using Mecalux.TestProcessor.CrossCutting.Enums;
 
-namespace Mecalux.TestProcessor.ResourceAccess.Contracts
+namespace Mecalux.TestProcessor.ResourceAccess.Domains
 {
-    public class Sort
+    public class TextSort
     {
         public int Id { get; set; }
         public SortOption Option { get; set; }

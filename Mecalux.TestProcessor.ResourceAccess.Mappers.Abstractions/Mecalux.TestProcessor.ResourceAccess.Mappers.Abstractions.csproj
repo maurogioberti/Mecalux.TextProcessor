@@ -7,12 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoFixture" Version="4.18.1" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Contracts\Mecalux.TestProcessor.ResourceAccess.Contracts.csproj" />
     <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Domains\Mecalux.TestProcessor.ResourceAccess.Domains.csproj" />
-    <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Repositories.Abstractions\Mecalux.TestProcessor.ResourceAccess.Repositories.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
