@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Mecalux.TestProcessor.CrossCutting.Utils\Mecalux.TestProcessor.CrossCutting.Utils.csproj" />
     <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Domains\Mecalux.TestProcessor.ResourceAccess.Domains.csproj" />
     <ProjectReference Include="..\Mecalux.TestProcessor.ResourceAccess.Repositories.Abstractions\Mecalux.TestProcessor.ResourceAccess.Repositories.Abstractions.csproj" />
   </ItemGroup>
