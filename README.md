@@ -6,7 +6,7 @@ Mecalux.TextProcessor is an integrated solution offering tools for text processi
 ## Features
 - Text sorting based on various criteria (alphabetical, length).
 - Text analysis for statistics (word count, spaces count, etc.).
-- WPF user interface.
+- WPF user interface for interactive text processing.
 - RESTful API for text processing.
 
 ## Technologies Used
@@ -28,6 +28,7 @@ The Mecalux.TextProcessor project is organized into several key directories, eac
 - **CrossCutting.Globalization**: Supports internationalization and localization.
 - **CrossCutting.Utils**: Provides utility functions used across the application.
 - **CrossCutting.Infrastructure**: Contains infrastructure setup and configuration.
+- **CrossCutting.Enums**: Defines enums used across different layers of the application.
 - **ResourceAccess.Services**: Implements service layer to interact with business logic and data access layers.
 - **Presentation.ServiceApi**: The RESTful API layer of the application.
 - **Presentation.Desktop**: The WPF-based desktop user interface.
@@ -45,9 +46,12 @@ To set up the Mecalux.TextProcessor project and get it running on your local dev
 3. Restore all NuGet packages.
 
 ### Running the Application
-- To run the WPF application, set `Presentation.Desktop` as the startup project and run it through Visual Studio.
+- To run the WPF application, set `Presentation.Desktop` as the startup project and run it through Visual Studio. This provides an interactive interface for text processing.
 - To start the API, set `Presentation.ServiceApi` as the startup project and run it. The API will be hosted locally (by default on `http://localhost:[port]`).
 
 ### Running Tests
 - Navigate to the `Business.Logic.Tests` project.
 - Use the Test Explorer in Visual Studio to run unit tests.
+
+### Aditional Information
+For a more comprehensive understanding of the Mecalux.TextProcessor project, please refer to the detailed documentation provided in the **Documentation.pdf** file, located in the root directory of this project. This document offers in-depth insights into the project's architecture, user interfaces, and other technical aspects.

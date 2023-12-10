@@ -16,6 +16,11 @@ namespace Mecalux.TestProcessor.Presentation.Desktop
 
         public ITextSortService TextSortService => textSortService;
 
+        // TODO: As an alternative, we could use a Rest API call using the collaborator pattern, which would handle these calls.
+        // We opted for the service layer for practicality and to avoid a direct dependency on the API.
+        // Instead, the service layer will take care of this.
+
+
         public MainWindow(ITextService textService, ITextSortService textSortService)
         {
             this.textService = textService;

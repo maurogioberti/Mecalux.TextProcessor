@@ -4,7 +4,7 @@
     {
         protected void HandleException(Exception exception)
         {
-            //TODO: Implement exception handling logic and error logging.
+            // TODO: Implement exception handling logic and error logging.
         }
     }
 }
