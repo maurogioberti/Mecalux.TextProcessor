@@ -55,3 +55,6 @@ To set up the Mecalux.TextProcessor project and get it running on your local dev
 
 ### Aditional Information
 For a more comprehensive understanding of the Mecalux.TextProcessor project, please refer to the detailed documentation provided in the **Documentation.pdf** file, located in the root directory of this project. This document offers in-depth insights into the project's architecture, user interfaces, and other technical aspects.
+
+### Initial Challenge Overview
+For an overview of the initial challenge and objectives that shaped this project, please see the **Challenge.pdf** file, also located in the root directory. This document outlines the specific requirements and goals set forth at the beginning of the project, providing valuable context for the development process.
